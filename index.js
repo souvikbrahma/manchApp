@@ -8,7 +8,7 @@ var secret = "S7gjlj4@khj";
 
 var app = express();
 
-var dburl = "mongodb://developer:SkillTransit@13.58.133.122:27017/anoclub_dev?authSource=admin";
+var dburl = "mongodb://developer:************@13.58.133.122:27017/*****?authSource=admin";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -59,7 +59,7 @@ app.post('/api/addUser', function(req, res){
         //console.log(dbQuery);
     
         mongo.connect(dburl, { useNewUrlParser: true }, function(err, db){
-            var dbo = db.db("anoclub_dev");
+            var dbo = db.db("************");
             var table = dbo.collection("users");
         
             var dbQuery = {
@@ -134,7 +134,7 @@ app.post('/api/logIn', function(req, res){
     var pass = req.body.pass;
 
     mongo.connect(dburl, { useNewUrlParser: true }, function(err, db){
-        var dbo = db.db("anoclub_dev");
+        var dbo = db.db("************");
         var table = dbo.collection("users");
 
         var dbQuery = {
@@ -167,7 +167,7 @@ app.post('/api/logIn', function(req, res){
 app.post('/api/userList', function(req, res){
 
     mongo.connect(dburl, { useNewUrlParser: true }, function(err, db){
-        var dbo = db.db("anoclub_dev");
+        var dbo = db.db("************");
         var table = dbo.collection("users");
 
         if(req.body.name == null && req.body.role == null && req.body.dob == null){
