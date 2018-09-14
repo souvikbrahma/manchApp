@@ -218,7 +218,7 @@ app.post('/api/userList', function(req, res){
 });
 
 
-var port = process.env.port || 3001;
+var port = process.env.port || 3000;
 
 app.listen(port, function(){
     console.log("Listenning on port "+port);
